@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: '魏志强教授学术个人主页：高移动性无线通信、OTFS、通感一体化与 B5G/6G 网络研究。',
 };
 
-const nav = [['首页', '/'], ['研究', '/research'], ['论文与专著', '/publications'], ['教学', '/teaching'], ['学术服务', '/service'], ['新闻', '/news']];
+const nav = [['首页', '/'], ['科学研究', '/research'], ['论文专著', '/publications'], ['教书育人', '/teaching'], ['学术服务', '/service'], ['新闻', '/news']];
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

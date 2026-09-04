@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ExternalLink } from 'lucide-react';
-export const metadata: Metadata = { title: '学术服务与荣誉' };
+export const metadata: Metadata = { title: '学术服务' };
 export const dynamic = 'force-static';
 
 const roles=[
@@ -11,17 +11,25 @@ const roles=[
   ['IEEE Open Journal of the Communications Society 编委','https://www.comsoc.org/publications/journals/ieee-ojcoms'],
 ];
 const activities=[
+  ['2027','IEEE WCNC 2027 · Conference Chair · 5–8 April 2027','https://wcnc2027.ieee-wcnc.org/'],
+  ['2026','20th International Symposium on Wireless Communication Systems (ISWCS 2026) · Conference Chair','https://iswcs.org/iswcs2026/index.html'],
+  ['2026','IEEE/CIC ICCC 2026 · Workshops Track Chair','https://iccc2026.ieee-iccc.org/'],
+  ['2026','IEEE ICC Workshops WS-26: Delay-Doppler and Chirp-Based Modulation for Future Communication Systems · Chair','https://icc2026.ieee-icc.org/workshops'],
   ['2026','IEEE ISIT 2026 Workshop Keynote：On Modulation Waveforms for 6G High-Mobility Communications','https://ngwd2026.github.io/isit_workshop/'],
-  ['2025','IEEE GLOBECOM Workshop on Delay-Doppler Communications, Sensing, and Their Integration','https://globecom2025.ieee-globecom.org/'],
-  ['2025','IEEE ICC Workshop on OTFS and Delay-Doppler Multicarrier Communications for 6G','https://icc2025.ieee-icc.org/'],
-  ['2025','IEEE WCNC Workshop on Delay-Doppler Communications, Sensing, and Their Integration','https://wcnc2025.ieee-wcnc.org/'],
+  ['2025','IEEE GLOBECOM Workshop on Delay-Doppler Communications, Sensing, and Their Integration · Chair','https://globecom2025.ieee-globecom.org/workshops'],
+  ['2025','IEEE/CIC ICCC 2025 · Workshops Track Chair','https://iccc2025.ieee-iccc.org/'],
+  ['2025','IEEE ICC Workshop WS16: OTFS and Delay-Doppler Multicarrier Communications for 6G · Chair','https://icc2025.ieee-icc.org/'],
+  ['2025','IEEE WCNC Workshops · Track Chair','https://wcnc2025.ieee-wcnc.org/'],
   ['2024','IEEE ICC Workshop on OTFS and DDMC for 6G · Publicity Chair','https://sites.google.com/view/otfs-ddmc-6g'],
-  ['2024','IEEE WCNC Workshop on Delay-Doppler Communications, Sensing, and Their Integration','https://wcnc2024.ieee-wcnc.org/'],
+  ['2024','IEEE WCNC Workshop WS-02: Delay-Doppler Communications, Sensing, and Their Integration · Chair','https://wcnc2024.ieee-wcnc.org/'],
+  ['2023','IEEE/CIC ICCC 2023 · Workshops Track Chair','https://iccc2023.ieee-iccc.org/'],
   ['2023','IEEE VTC-Fall Workshop W4 · Delay-Doppler Communications and Sensing for Vehicular Networks · Co-organizer','https://events.vtsociety.org/vtc2023-fall/workshops/w4-delay-doppler-communications-and-sensing-for-vehicular-networks/'],
-  ['2023','IEEE WCNC Workshop on Delay-Doppler Communications, Sensing, and Their Integration','https://wcnc2023.ieee-wcnc.org/'],
+  ['2023','IEEE WCNC Workshop WS-04: Delay-Doppler Communications, Sensing, and Their Integration · Chair','https://wcnc2023.ieee-wcnc.org/'],
+  ['2022','International Symposium on Wireless Communication Systems (ISWCS 2022) · Track Chair','https://iswcs.org/iswcs2022/'],
   ['2022','IEEE VTC-Spring Tutorial T13 · OTFS: Waveform for Future Wireless Networks · Co-organizer','https://events.vtsociety.org/vtc2022-spring/conference-sessions/call-for-tutorials/t13-orthogonal-time-frequency-space-modulation-waveform-for-future-wireless-networks/'],
-  ['2022','IEEE ICC Workshop on OTFS and Delay-Doppler Signal Processing for 6G','https://icc2022.ieee-icc.org/'],
-  ['2021','IEEE ICC Workshop on OTFS for 6G and Future High-mobility Communications','https://icc2021.ieee-icc.org/'],
+  ['2022','IEEE ICC Workshop WS05: OTFS and Delay-Doppler Signal Processing for 6G and Future High-Mobility Communications · Chair','https://icc2022.ieee-icc.org/'],
+  ['2021','IEEE/CIC ICCC 2021 · Workshops Track Chair','https://iccc2021.ieee-iccc.org/'],
+  ['2021','IEEE ICC Workshop WS15: OTFS for 6G and Future High-Mobility Communications · Chair','https://icc2021.ieee-icc.org/'],
 ];
 const honors=[
   ['国家自然科学基金优秀青年科学基金（海外）项目获得者','https://www.nsfc.gov.cn/'],
@@ -33,11 +41,9 @@ const honors=[
   ['IEEE TWC 杰出审稿专家（2017、2018）','https://www.comsoc.org/publications/journals/ieee-twc'],
   ['IEEE TCOM 杰出审稿专家（2017–2020）','https://www.comsoc.org/publications/journals/ieee-tcom'],
 ];
-const tpc=['IEEE GLOBECOM：2017、2018、2020–2024','IEEE ICC：2018、2021–2024','IEEE WCNC：2019、2021–2024','IEEE/CIC ICCC：2021–2023','IEEE WCSP：2018'];
-
-export default function ServicePage(){return <main><section className="page-hero shell"><p className="eyebrow">SERVICE & HONORS</p><h1>学术服务与荣誉</h1></section><section className="shell content-section service-layout">
+export default function ServicePage(){return <main><section className="page-hero shell"><p className="eyebrow">SERVICE & HONORS</p><h1>学术服务</h1></section><section className="shell content-section service-layout">
   <div className="service-main"><p className="eyebrow">EDITORIAL & COMMUNITY</p><h2>学术兼职</h2><ul className="linked-list">{roles.map(([x,u])=><li key={x}><a href={u} target="_blank" rel="noreferrer">{x}<ExternalLink size={14}/></a></li>)}</ul>
   <div className="section-heading publication-heading second"><div><p className="eyebrow">CONFERENCE ORGANIZATION</p><h2>专题、教程与会议组织</h2></div></div><div className="activity-list">{activities.map(([y,x,u])=><article key={y+x}><time>{y}</time><a href={u} target="_blank" rel="noreferrer">{x}<ExternalLink size={14}/></a></article>)}</div>
-  <h3 className="subhead">技术程序委员会</h3><ul className="clean-list compact">{tpc.map(x=><li key={x}>{x}</li>)}</ul><h3 className="subhead">专题客座编辑</h3><ul className="linked-list compact"><li><a href="https://www.ejournal.org.cn/zh/home/" target="_blank" rel="noreferrer">《电子学报》：面向 6G 的新型通信波形专题 <ExternalLink size={14}/></a></li><li>ZTE Communications：Integrated Sensing and Communication（2024）</li><li>Entropy：Delay-Doppler Domain Communications for Future Wireless Networks（2023）</li><li>《电子与信息学报》：面向 6G 的时延多普勒域通信范式（2022）</li></ul></div>
+  <h3 className="subhead">专题客座编辑</h3><ul className="linked-list compact"><li><a href="https://www.ejournal.org.cn/zh/home/" target="_blank" rel="noreferrer">《电子学报》：面向 6G 的新型通信波形专题 <ExternalLink size={14}/></a></li><li>ZTE Communications：Integrated Sensing and Communication（2024）</li><li>Entropy：Delay-Doppler Domain Communications for Future Wireless Networks（2023）</li><li>《电子与信息学报》：面向 6G 的时延多普勒域通信范式（2022）</li></ul></div>
   <aside className="honor-panel"><p className="eyebrow">RECOGNITION</p><h2>荣誉获奖</h2><ol>{honors.map(([x,u],i)=><li key={x}><span>{String(i+1).padStart(2,'0')}</span><a href={u} target="_blank" rel="noreferrer">{x}<ExternalLink size={13}/></a></li>)}</ol></aside>
   </section></main>}

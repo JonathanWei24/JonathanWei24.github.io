@@ -25,7 +25,7 @@ export default function Home() {
           <p className="lead">面向 B5G/6G 无线网络，研究高移动性通信、时延–多普勒域信号处理与通感一体化信息理论。</p>
           <div className="hero-actions">
             <a className="button primary" href="/research">探索研究 <ArrowRight size={17} /></a>
-            <a className="button ghost" href="/publications"><BookOpen size={17} /> 论文成果</a>
+            <a className="button ghost" href="/publications"><BookOpen size={17} /> 论文专著</a>
           </div>
           <a className="fresh-project" href="/research"><span>NEW · 2026 NSFC</span><strong>基于隐式信道图谱的低空无线网络预测式资源优化方法研究</strong><ArrowRight size={17}/></a>
           <div className="affiliations">
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <div className="portrait-wrap">
           {/* oxlint-disable-next-line next/no-img-element -- archived local portrait */}
-          <div className="portrait-frame"><img src="/assets/legacy/cda45472-e14d-48d0-83e9-8d82e1604c4d-b70c112c3c.png" alt="魏志强教授" width="241" height="290" /></div>
+          <div className="portrait-frame"><img src="/assets/portrait-2026.png" alt="魏志强教授" width="1004" height="1567" /></div>
           <div className="signal-card"><span>RESEARCH SIGNAL</span><strong>6G · OTFS · ISAC</strong></div>
         </div>
       </section>

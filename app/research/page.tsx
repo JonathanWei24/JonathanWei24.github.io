@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-export const metadata: Metadata = { title: '研究方向' };
+export const metadata: Metadata = { title: '科学研究' };
 export const dynamic = 'force-static';
 
 const areas = [
@@ -22,7 +22,7 @@ const projects = [
 ];
 
 export default function ResearchPage(){return <main>
-  <section className="page-hero shell"><p className="eyebrow">RESEARCH</p><h1>研究方向</h1><p>围绕 B5G/6G 高移动无线网络，连接物理层算法、网络优化与信息理论。</p></section>
+  <section className="page-hero shell"><p className="eyebrow">RESEARCH</p><h1>科学研究</h1><p>围绕 B5G/6G 高移动无线网络，连接物理层算法、网络优化与信息理论。</p></section>
   <section className="shell content-section"><div className="area-list">{areas.map((a,i)=><article className="area" key={a.n}>
     <div className="area-copy"><span className="big-number">{a.n}</span><p className="eyebrow">{a.en}</p><h2>{a.title}</h2><p>{a.text}</p></div>
     <figure className={i===2?'wide-diagram':''}>{/* oxlint-disable-next-line next/no-img-element -- archived local research figure */}<img src={a.image} alt={a.caption} width={i===0?811:i===1?700:695} height={i===0?571:i===1?547:268}/><figcaption>{a.caption}</figcaption></figure>
