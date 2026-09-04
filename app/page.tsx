@@ -1,5 +1,6 @@
 import { ArrowRight, BookOpen, Radio, Satellite, ScanLine } from 'lucide-react';
-import Link from 'next/link';
+
+/* oxlint-disable next/no-html-link-for-pages -- full-page navigation is required for GitHub Pages static hosting */
 
 const research = [
   { icon: Radio, number: '01', title: '高移动性信道传输', en: 'High-mobility communications', text: '面向无人机、车联网、卫星与航空通信，研究调制波形、检测及信道估计方法。' },
@@ -23,10 +24,10 @@ export default function Home() {
           <p className="role">教授 · 博士生导师 · 洪堡学者</p>
           <p className="lead">面向 B5G/6G 无线网络，研究高移动性通信、时延–多普勒域信号处理与通感一体化信息理论。</p>
           <div className="hero-actions">
-            <Link className="button primary" href="/research">探索研究 <ArrowRight size={17} /></Link>
-            <Link className="button ghost" href="/publications"><BookOpen size={17} /> 论文成果</Link>
+            <a className="button primary" href="/research">探索研究 <ArrowRight size={17} /></a>
+            <a className="button ghost" href="/publications"><BookOpen size={17} /> 论文成果</a>
           </div>
-          <Link className="fresh-project" href="/research"><span>NEW · 2026 NSFC</span><strong>基于隐式信道图谱的低空无线网络预测式资源优化方法研究</strong><ArrowRight size={17}/></Link>
+          <a className="fresh-project" href="/research"><span>NEW · 2026 NSFC</span><strong>基于隐式信道图谱的低空无线网络预测式资源优化方法研究</strong><ArrowRight size={17}/></a>
           <div className="affiliations">
             <span>数学与统计学院</span><span>信息科学系</span><span>大数据算法与分析技术国家工程实验室</span>
           </div>
@@ -42,7 +43,7 @@ export default function Home() {
         <div className="shell">
           <div className="section-heading split">
             <div><p className="eyebrow">RESEARCH FOCUS</p><h2>从信道理论到智能网络</h2></div>
-            <Link className="text-link" href="/research">查看完整研究介绍 <ArrowRight size={16} /></Link>
+            <a className="text-link" href="/research">查看完整研究介绍 <ArrowRight size={16} /></a>
           </div>
           <div className="research-grid">
             {research.map((item) => (
@@ -68,16 +69,16 @@ export default function Home() {
         <aside className="recognition">
           <p className="eyebrow">RECOGNITION</p><h2>荣誉与影响</h2>
           <ul>{highlights.map((item) => <li key={item}>{item}</li>)}</ul>
-          <Link className="text-link light" href="/service">学术服务与荣誉 <ArrowRight size={16} /></Link>
+          <a className="text-link light" href="/service">学术服务与荣誉 <ArrowRight size={16} /></a>
         </aside>
       </section>
 
       <section className="shell latest" id="news">
-        <div className="section-heading split"><div><p className="eyebrow">LATEST</p><h2>近期动态</h2></div><Link className="text-link" href="/news">全部新闻 <ArrowRight size={16} /></Link></div>
+        <div className="section-heading split"><div><p className="eyebrow">LATEST</p><h2>近期动态</h2></div><a className="text-link" href="/news">全部新闻 <ArrowRight size={16} /></a></div>
         <div className="news-list">
-          <Link href="/research"><time>2026</time><strong>新增国家自然科学基金面上项目：基于隐式信道图谱的低空无线网络预测式资源优化方法研究</strong><ArrowRight /></Link>
-          <Link href="/publications"><time>2026.06</time><strong>Elsevier 专著 Delay-Doppler Communications and Sensing 出版</strong><ArrowRight /></Link>
-          <Link href="/news"><time>2026.01.08</time><strong>杜若琳同学第一作者论文被 IEEE Transactions on Wireless Communications 接收</strong><ArrowRight /></Link>
+          <a href="/research"><time>2026</time><strong>新增国家自然科学基金面上项目：基于隐式信道图谱的低空无线网络预测式资源优化方法研究</strong><ArrowRight /></a>
+          <a href="/publications"><time>2026.06</time><strong>Elsevier 专著 Delay-Doppler Communications and Sensing 出版</strong><ArrowRight /></a>
+          <a href="/news"><time>2026.01.08</time><strong>杜若琳同学第一作者论文被 IEEE Transactions on Wireless Communications 接收</strong><ArrowRight /></a>
         </div>
       </section>
     </main>
