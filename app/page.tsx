@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <div className="portrait-wrap">
           {/* oxlint-disable-next-line next/no-img-element -- archived local portrait */}
-          <div className="portrait-frame"><img src="/assets/portrait-2026.png" alt="魏志强教授" width="1004" height="1567" /></div>
+          <div className="portrait-frame"><img src="/assets/portrait-2026.jpg?v=2" alt="魏志强教授" width="1004" height="1567" /></div>
           <div className="signal-card"><span>RESEARCH SIGNAL</span><strong>6G · OTFS · ISAC</strong></div>
         </div>
       </section>

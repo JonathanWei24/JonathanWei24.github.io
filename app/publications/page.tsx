@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { BookOpen, ExternalLink } from 'lucide-react';
-import { bookUrl, conferencePublications, journalPublications, scholarProfile, scholarSearch, underReviewPublications, type Publication } from '@/lib/profile-data';
+import { bookChapterPublications, bookUrl, conferencePublications, journalPublications, scholarProfile, scholarSearch, underReviewPublications, type Publication } from '@/lib/profile-data';
 
 export const metadata: Metadata = { title: '论文专著' };
 export const dynamic = 'force-static';
@@ -8,7 +8,7 @@ export const dynamic = 'force-static';
 function PublicationList({ items, start = 1 }: { items: Publication[]; start?: number }) {
   return <div className="publication-list">{items.map((p, i) => {
     const href = p.href || scholarSearch(p.title);
-    return <article key={`${p.year}-${p.title}`}><span>{String(start + i).padStart(2, '0')}</span><div><time>{p.year}</time><h2><a href={href} target="_blank" rel="noreferrer">{p.title} <ExternalLink size={14}/></a></h2><p>{p.venue}</p>{p.note && <em>{p.note}</em>}</div></article>;
+    return <article key={`${p.year}-${p.title}`}><span>{String(start + i).padStart(2, '0')}</span><div><time>{p.year}</time><h2><a href={href} target="_blank" rel="noreferrer">{p.title} <ExternalLink size={14}/></a></h2>{p.authors && <p className="publication-authors">{p.authors}</p>}<p>{p.venue}</p>{p.note && <em>{p.note}</em>}</div></article>;
   })}</div>;
 }
 
@@ -19,5 +19,6 @@ export default function PublicationsPage(){return <main>
     <div className="section-heading publication-heading"><div><p className="eyebrow">UNDER REVIEW</p><h2>投稿中论文</h2></div><span>{underReviewPublications.length} entries</span></div><PublicationList items={underReviewPublications}/>
     <div className="section-heading publication-heading second"><div><p className="eyebrow">JOURNAL</p><h2>期刊论文</h2></div><span>{journalPublications.length} entries</span></div><PublicationList items={journalPublications}/>
     <div className="section-heading publication-heading second"><div><p className="eyebrow">CONFERENCE</p><h2>会议论文</h2></div><span>{conferencePublications.length} entries</span></div><PublicationList items={conferencePublications}/>
+    <div className="section-heading publication-heading second"><div><p className="eyebrow">BOOK & CHAPTERS</p><h2>专著与章节</h2></div><span>{bookChapterPublications.length} entries</span></div><PublicationList items={bookChapterPublications}/>
   </section>
 </main>}
