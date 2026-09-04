@@ -23,14 +23,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <header className="site-header">
           <a className="brand" href="/" aria-label="魏志强个人主页"><span className="brand-mark">ZW</span><span><strong>魏志强</strong><small>Zhiqiang Wei</small></span></a>
           <nav aria-label="主导航">{nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}</nav>
-          <a className="header-contact" href="https://gr.xjtu.edu.cn/zqwei/" target="_blank" rel="noreferrer"><Mail size={16} /> 联系</a>
+          <a className="header-contact" href="mailto:zhiqiang.wei@xjtu.edu.cn"><Mail size={16} /> zhiqiang.wei@xjtu.edu.cn</a>
         </header>
         {children}
         <footer>
           <div className="shell footer-grid">
             <div><strong>魏志强 · Zhiqiang Wei</strong><p>西安交通大学数学与统计学院</p></div>
             <div><MapPin size={17} /><span>兴庆校区数学楼 326 办公室</span></div>
-            <div><p>© {new Date().getFullYear()} Zhiqiang Wei</p><a href="/archive/xjtu-site-archive.md" download>原站完整 Markdown ↓</a><br/><a href="https://gr.xjtu.edu.cn/zqwei/" target="_blank" rel="noreferrer">西交大教师主页 ↗</a></div>
+            <div><p>© {new Date().getFullYear()} Zhiqiang Wei</p><a href="mailto:zhiqiang.wei@xjtu.edu.cn">zhiqiang.wei@xjtu.edu.cn</a></div>
           </div>
         </footer>
       </body>
