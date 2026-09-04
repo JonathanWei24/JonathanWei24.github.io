@@ -1,1 +1,38 @@
-m«ëˆ§½©buªàºg§µªişV²¢ëm³,j›jÇºà7an{¦Š)ßŠW¨¢ë_ŠW›n·š‘ºŞjG§r‡^v‹­¦ën¦)í¢X§zÊ•éà¶î˜7]yÊy×œ¡×¢›­†¥¥Ø¬¦V²¶¬™ë,j¢Šzn¶)éº×â•ç^}«¥µú+²×bŠ.¶›­¢ëiº×â•ç^}«¥µú+²×hº
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono, Noto_Sans_SC } from 'next/font/google';
+import { Mail, MapPin } from 'lucide-react';
+import Link from 'next/link';
+import './globals.css';
+
+const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
+const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
+const notoSans = Noto_Sans_SC({ variable: '--font-noto-sc', subsets: ['latin'], weight: ['400', '500', '600', '700'] });
+
+export const metadata: Metadata = {
+  title: { default: 'é­å¿—å¼º | Zhiqiang Wei', template: '%s | é­å¿—å¼º' },
+  description: 'é­å¿—å¼ºæ•™æˆå­¦æœ¯ä¸ªäººä¸»é¡µï¼šé«˜ç§»åŠ¨æ€§æ— çº¿é€šä¿¡ã€OTFSã€é€šæ„Ÿä¸€ä½“åŒ–ä¸ B5G/6G ç½‘ç»œç ”ç©¶ã€‚',
+};
+
+const nav = [['é¦–é¡µ', '/'], ['ç ”ç©¶', '/research'], ['è®ºæ–‡ä¸ä¸“è‘—', '/publications'], ['æ•™å­¦', '/teaching'], ['å­¦æœ¯æœåŠ¡', '/service'], ['æ–°é—»', '/news']];
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="zh-CN">
+      <body className={`${geistSans.variable} ${geistMono.variable} ${notoSans.variable}`}>
+        <header className="site-header">
+          <Link className="brand" href="/" aria-label="é­å¿—å¼ºä¸ªäººä¸»é¡µ"><span className="brand-mark">ZW</span><span><strong>é­å¿—å¼º</strong><small>Zhiqiang Wei</small></span></Link>
+          <nav aria-label="ä¸»å¯¼èˆª">{nav.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</nav>
+          <a className="header-contact" href="https://gr.xjtu.edu.cn/zqwei/" target="_blank" rel="noreferrer"><Mail size={16} /> è”ç³»</a>
+        </header>
+        {children}
+        <footer>
+          <div className="shell footer-grid">
+            <div><strong>é­å¿—å¼º Â· Zhiqiang Wei</strong><p>è¥¿å®‰äº¤é€šå¤§å­¦æ•°å­¦ä¸ç»Ÿè®¡å­¦é™¢</p></div>
+            <div><MapPin size={17} /><span>å…´åº†æ ¡åŒºæ•°å­¦æ¥¼ 326 åŠå…¬å®¤</span></div>
+            <div><p>Â© {new Date().getFullYear()} Zhiqiang Wei</p><a href="/archive/xjtu-site-archive.md" download>åŸç«™å®Œæ•´ Markdown â†“</a><br/><a href="https://gr.xjtu.edu.cn/zqwei/" target="_blank" rel="noreferrer">è¥¿äº¤å¤§æ•™å¸ˆä¸»é¡µ â†—</a></div>
+          </div>
+        </footer>
+      </body>
+    </html>
+  );
+}

@@ -1,1 +1,23 @@
-m�눧��bu��g���i����'�*'��Z��l�K��ڱ��[�颊w��(����ۭ�n����ܡם��i�۩�{h�)޲��zx-�{��^r�^u�(u触�a��iv+)����+&z��袞���zn���yןj�m~��ا�����h��n���yןj�m~���.
+import type { Metadata } from 'next';
+import { BookOpen, ExternalLink } from 'lucide-react';
+import { bookUrl, conferencePublications, journalPublications, scholarProfile, scholarSearch, type Publication } from '@/lib/profile-data';
+
+export const metadata: Metadata = { title: '论文与专著' };
+export const dynamic = 'force-static';
+
+function PublicationList({ items, start = 1 }: { items: Publication[]; start?: number }) {
+  return <div className="publication-list">{items.map((p, i) => {
+    const href = p.href || scholarSearch(p.title);
+    return <article key={`${p.year}-${p.title}`}><span>{String(start + i).padStart(2, '0')}</span><div><time>{p.year}</time><h2><a href={href} target="_blank" rel="noreferrer">{p.title} <ExternalLink size={14}/></a></h2><p>{p.venue}</p>{p.note && <em>{p.note}</em>}</div></article>;
+  })}</div>;
+}
+
+export default function PublicationsPage(){return <main>
+  <section className="page-hero shell"><p className="eyebrow">PUBLICATIONS & BOOK</p><h1>论文与专著</h1><p>依据西交大原主页完整复核，并补充 2025–2026 年近期成果。标题均可跳转至 DOI、会议官网或 Google Scholar 检索。</p><div className="page-actions"><a className="button primary" href={scholarProfile} target="_blank" rel="noreferrer">Google Scholar <ExternalLink size={16}/></a><a className="button ghost" href="/archive/xjtu-site-archive.md" download>下载原站完整 Markdown</a></div></section>
+  <section className="shell content-section">
+    <article className="book-feature"><BookOpen size={34}/><div><p className="eyebrow">MONOGRAPH · 2026</p><h2><a href={bookUrl} target="_blank" rel="noreferrer">Delay-Doppler Communications and Sensing <ExternalLink size={17}/></a></h2><p><strong>Principles, Advances, and Applications of OTFS</strong></p><p>Shuangyang Li, Weijie Yuan, <strong>Zhiqiang Wei</strong>, Jinhong Yuan, Giuseppe Caire · Elsevier · 1st Edition · June 2026</p><p>系统介绍 Zak 变换、时延–多普勒域通信、OTFS、MIMO、雷达感知及 DD 域通感一体化，共 15 章。</p></div></article>
+    <div className="section-heading publication-heading"><div><p className="eyebrow">JOURNAL & PREPRINT</p><h2>期刊论文与预印本</h2></div><span>{journalPublications.length} entries</span></div><PublicationList items={journalPublications}/>
+    <div className="section-heading publication-heading second"><div><p className="eyebrow">CONFERENCE</p><h2>会议论文</h2></div><span>{conferencePublications.length} selected entries</span></div><PublicationList items={conferencePublications} start={journalPublications.length + 1}/>
+    <div className="archive-note"><strong>完整性说明</strong><p>页面已结构化发布原站主要期刊论文及近期会议论文；原站抓取的 51 个页面、全部文本与素材索引均保存在 Markdown 档案中，可下载核对。Google Scholar 可能因访问地区显示不同，以 Scholar 主页实时记录为准。</p><div className="inline-links"><a href={scholarProfile} target="_blank" rel="noreferrer">实时 Google Scholar ↗</a><a href="/archive/xjtu-site-archive.md" download>完整原站 Markdown ↓</a><a href="https://gr.xjtu.edu.cn/zqwei/zh_CN/zdylm/1007700/list/index.htm" target="_blank" rel="noreferrer">原站论文页 ↗</a></div></div>
+  </section>
+</main>}
