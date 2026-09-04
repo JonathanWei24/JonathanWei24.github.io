@@ -1,9 +1,8 @@
 name: Deploy website to GitHub Pages
 
 on:
-  workflow_run:
-    workflows: ["pages build and deployment"]
-    types: [completed]
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -34,6 +33,8 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/client
+      - name: Wait for branch-source Pages deployment
+        run: sleep 45
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
