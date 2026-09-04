@@ -27,5 +27,5 @@ export default function ResearchPage(){return <main>
     <div className="area-copy"><span className="big-number">{a.n}</span><p className="eyebrow">{a.en}</p><h2>{a.title}</h2><p>{a.text}</p></div>
     <figure className={i===2?'wide-diagram':''}>{/* oxlint-disable-next-line next/no-img-element -- archived local research figure */}<img src={a.image} alt={a.caption} width={i===0?811:i===1?700:695} height={i===0?571:i===1?547:268}/><figcaption>{a.caption}</figcaption></figure>
   </article>)}</div></section>
-  <section className="project-band"><div className="shell"><p className="eyebrow">RESEARCH PROJECTS</p><h2>科研项目</h2><p className="project-intro">2026 年国家自然科学基金面上项目为本次新增信息；公开检索暂未获得可可靠核验的批准号、资助金额与结题年份，因此只发布已确认内容，待后续材料补齐。</p><div className="project-list">{projects.map(p=><div key={p[1]}><time>{p[0]}</time><strong>{p[1]}</strong><span>{p[2]}</span></div>)}</div></div></section>
+  <section className="project-band"><div className="shell"><p className="eyebrow">RESEARCH PROJECTS</p><h2>科研项目</h2><div className="project-list">{projects.map(p=><div key={p[1]}><time>{p[0]}</time><strong>{p[1]}</strong><span>{p[2]}</span></div>)}</div></div></section>
 </main>}
