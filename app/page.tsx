@@ -21,7 +21,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">XI&apos;AN JIAOTONG UNIVERSITY · 西安交通大学</p>
           <h1>魏志强 <span>Zhiqiang Wei</span></h1>
-          <p className="role">教授 · 博士生导师 · 洪堡学者</p>
+          <p className="role">教授 · 博士生导师 · 洪堡学者 · IEEE Senior Member</p>
           <p className="lead">面向 B5G/6G 无线网络，研究高移动性通信、时延–多普勒域信号处理与通感一体化信息理论。</p>
           <div className="hero-actions">
             <a className="button primary" href="/research">探索研究 <ArrowRight size={17} /></a>
@@ -64,6 +64,7 @@ export default function Home() {
             <div><time>2021 — 2022</time><strong>埃朗根–纽伦堡大学</strong><span>洪堡博士后研究员</span></div>
             <div><time>2019 — 2021</time><strong>新南威尔士大学</strong><span>博士后研究员</span></div>
             <div><time>2015 — 2019</time><strong>新南威尔士大学</strong><span>电气工程博士</span></div>
+            <div><time>2008 — 2012</time><strong>西北工业大学</strong><span>信息对抗技术学士</span></div>
           </div>
         </div>
         <aside className="recognition">
