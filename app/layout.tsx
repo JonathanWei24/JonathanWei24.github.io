@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Noto_Sans_SC } from 'next/font/google';
 import { Mail, MapPin } from 'lucide-react';
-import Link from 'next/link';
 import './globals.css';
+
+/* oxlint-disable next/no-html-link-for-pages -- full-page navigation is required for GitHub Pages static hosting */
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
@@ -20,8 +21,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="zh-CN">
       <body className={`${geistSans.variable} ${geistMono.variable} ${notoSans.variable}`}>
         <header className="site-header">
-          <Link className="brand" href="/" aria-label="魏志强个人主页"><span className="brand-mark">ZW</span><span><strong>魏志强</strong><small>Zhiqiang Wei</small></span></Link>
-          <nav aria-label="主导航">{nav.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</nav>
+          <a className="brand" href="/" aria-label="魏志强个人主页"><span className="brand-mark">ZW</span><span><strong>魏志强</strong><small>Zhiqiang Wei</small></span></a>
+          <nav aria-label="主导航">{nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}</nav>
           <a className="header-contact" href="https://gr.xjtu.edu.cn/zqwei/" target="_blank" rel="noreferrer"><Mail size={16} /> 联系</a>
         </header>
         {children}
