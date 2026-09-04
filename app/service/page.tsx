@@ -4,8 +4,8 @@ export const metadata: Metadata = { title: '学术服务与荣誉' };
 export const dynamic = 'force-static';
 
 const roles=[
-  ['IEEE Communications Society 会员','https://www.comsoc.org/'],
-  ['IEEE ComSoc OTFS Special Interest Group 创始联合主席（Publications）','https://www.comsoc.org/publications/best-readings/orthogonal-time-frequency-space-otfs-and-delay-doppler-signal-processing'],
+  ['IEEE Senior Member','https://www.ieee.org/membership/senior/'],
+  ['IEEE ComSoc OTFS Special Interest Group 创始联合主席（Publications）','https://sites.google.com/view/otfs-sig/otfs-sig'],
   ['IEEE Transactions on Communications 编委','https://www.comsoc.org/publications/journals/ieee-tcom'],
   ['IEEE Transactions on Wireless Communications 编委','https://www.comsoc.org/publications/journals/ieee-twc'],
   ['IEEE Open Journal of the Communications Society 编委','https://www.comsoc.org/publications/journals/ieee-ojcoms'],
@@ -35,9 +35,9 @@ const honors=[
 ];
 const tpc=['IEEE GLOBECOM：2017、2018、2020–2024','IEEE ICC：2018、2021–2024','IEEE WCNC：2019、2021–2024','IEEE/CIC ICCC：2021–2023','IEEE WCSP：2018'];
 
-export default function ServicePage(){return <main><section className="page-hero shell"><p className="eyebrow">SERVICE & HONORS</p><h1>学术服务与荣誉</h1><p>依据原站完整条目与 ICC、WCNC、VTC、GLOBECOM 等会议官网交叉复核；可核验项目均附官方链接。</p></section><section className="shell content-section service-layout">
+export default function ServicePage(){return <main><section className="page-hero shell"><p className="eyebrow">SERVICE & HONORS</p><h1>学术服务与荣誉</h1></section><section className="shell content-section service-layout">
   <div className="service-main"><p className="eyebrow">EDITORIAL & COMMUNITY</p><h2>学术兼职</h2><ul className="linked-list">{roles.map(([x,u])=><li key={x}><a href={u} target="_blank" rel="noreferrer">{x}<ExternalLink size={14}/></a></li>)}</ul>
   <div className="section-heading publication-heading second"><div><p className="eyebrow">CONFERENCE ORGANIZATION</p><h2>专题、教程与会议组织</h2></div></div><div className="activity-list">{activities.map(([y,x,u])=><article key={y+x}><time>{y}</time><a href={u} target="_blank" rel="noreferrer">{x}<ExternalLink size={14}/></a></article>)}</div>
-  <h3 className="subhead">技术程序委员会（原站完整记录）</h3><ul className="clean-list compact">{tpc.map(x=><li key={x}>{x}</li>)}</ul><h3 className="subhead">专题客座编辑</h3><ul className="clean-list compact"><li>ZTE Communications：Integrated Sensing and Communication（2024）</li><li>Entropy：Delay-Doppler Domain Communications for Future Wireless Networks（2023）</li><li>《电子与信息学报》：面向 6G 的时延多普勒域通信范式（2022）</li></ul></div>
-  <aside className="honor-panel"><p className="eyebrow">RECOGNITION</p><h2>荣誉获奖</h2><ol>{honors.map(([x,u],i)=><li key={x}><span>{String(i+1).padStart(2,'0')}</span><a href={u} target="_blank" rel="noreferrer">{x}<ExternalLink size={13}/></a></li>)}</ol><p className="source-note">年份说明：Elsevier 专著作者简介明确记载全球前 2% 自 2021 年起；专著销售页另一处作者简介明确写为 2021–2024。当前未发现足以确认魏志强本人 2025 入选的公开名单条目，故不作推断。</p></aside>
+  <h3 className="subhead">技术程序委员会</h3><ul className="clean-list compact">{tpc.map(x=><li key={x}>{x}</li>)}</ul><h3 className="subhead">专题客座编辑</h3><ul className="linked-list compact"><li><a href="https://www.ejournal.org.cn/zh/home/" target="_blank" rel="noreferrer">《电子学报》：面向 6G 的新型通信波形专题 <ExternalLink size={14}/></a></li><li>ZTE Communications：Integrated Sensing and Communication（2024）</li><li>Entropy：Delay-Doppler Domain Communications for Future Wireless Networks（2023）</li><li>《电子与信息学报》：面向 6G 的时延多普勒域通信范式（2022）</li></ul></div>
+  <aside className="honor-panel"><p className="eyebrow">RECOGNITION</p><h2>荣誉获奖</h2><ol>{honors.map(([x,u],i)=><li key={x}><span>{String(i+1).padStart(2,'0')}</span><a href={u} target="_blank" rel="noreferrer">{x}<ExternalLink size={13}/></a></li>)}</ol></aside>
   </section></main>}
